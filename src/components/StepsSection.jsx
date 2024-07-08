@@ -164,7 +164,6 @@ const StepsSection = () => {
           </div>
 
           {/* details section 3 */}
-          {/* just commit  */}
 
           <div>
             <section
