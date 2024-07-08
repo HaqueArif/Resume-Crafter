@@ -9,32 +9,27 @@ import Lottie from "lottie-react";
 import SectionTitle from "../Hooks/SectionTitle";
 import { useTranslation } from "react-i18next";
 import Aos from "aos";
-import 'aos/dist/aos.css';
+import "aos/dist/aos.css";
 Aos.init();
 
 const StepsSection = () => {
   const { t } = useTranslation(["steps"]);
   return (
-
-
     <div className="rgContainer bg-[#fff] mt-28">
       {/* SubTitle Section Start */}
       <div data-aos="fade-up" data-aos-duration="2000">
         <SectionTitle
           subHeading={t("steps:step1.subHeading")}
-          heading=
-          {t("steps:step1.heading")}
+          heading={t("steps:step1.heading")}
         ></SectionTitle>
       </div>
       {/* SubTitle Section End */}
 
-
       {/* Step Card Sections Start */}
-      <Tabs>
-        <TabList>
+      <div>
+        <div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Tab data-aos="fade-left"
-              data-aos-duration="2000">
+            <div data-aos="fade-left" data-aos-duration="2000">
               <a href="#step1">
                 <div className="bg-[#F4F7FC] text-white py-10 px-8 shadow-lg rounded-md hover-design">
                   <div className="h-14 w-14 icon-hover bg-[rgba(247,138,203,.2)] flex justify-center items-center rounded-full mb-5">
@@ -54,10 +49,9 @@ const StepsSection = () => {
                   </div>
                 </div>
               </a>
-            </Tab>
+            </div>
 
-            <Tab data-aos="fade-down"
-              data-aos-duration="2000">
+            <div data-aos="fade-down" data-aos-duration="2000">
               <a href="#step2">
                 <div className="bg-[#F4F7FC] text-white py-10 px-8 shadow-lg rounded-md hover-design">
                   <div className="h-14 w-14 icon-hover bg-[rgba(0,174,255,.2)] flex justify-center items-center rounded-full mb-5">
@@ -77,10 +71,9 @@ const StepsSection = () => {
                   </div>
                 </div>
               </a>
-            </Tab>
+            </div>
 
-            <Tab data-aos="fade-right"
-              data-aos-duration="1000">
+            <div data-aos="fade-right" data-aos-duration="1000">
               <a href="#step3">
                 <div className="bg-[#F4F7FC] text-white py-10 px-8 shadow-lg rounded-md hover-design">
                   <div className="h-14 w-14 icon-hover bg-[rgba(247,138,203,.2)] flex justify-center items-center rounded-full mb-5">
@@ -100,19 +93,24 @@ const StepsSection = () => {
                   </div>
                 </div>
               </a>
-            </Tab>
+            </div>
           </div>
-        </TabList>
+        </div>
         {/* Step Card Sections End */}
 
         {/* Details Steps section Start */}
         <div className="pt-8">
           {/* details section 1 */}
-          <TabPanel>
+          <div>
             <section
               className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-2 justify-between gap-10 "
-              id="step1">
-              <div data-aos="zoom-out-right" data-aos-duration="2000" className="flex flex-col justify-center ">
+              id="step1"
+            >
+              <div
+                data-aos="zoom-out-right"
+                data-aos-duration="2000"
+                className="flex flex-col justify-center "
+              >
                 <p className="text-[#ddd] font-bold text-6xl md:text-9xl mb-5 md:mb-9">
                   {" "}
                   01
@@ -129,21 +127,30 @@ const StepsSection = () => {
                 />
               </div>
             </section>
-          </TabPanel>
+          </div>
 
           {/* details section 2 */}
 
-          <TabPanel>
+          <div>
             <section
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10"
-              id="step2">
-              <div data-aos="zoom-in-right" data-aos-duration="2000" className="">
+              id="step2"
+            >
+              <div
+                data-aos="zoom-in-right"
+                data-aos-duration="2000"
+                className=""
+              >
                 <Lottie
                   className="w-full lg:h-[600px]"
                   animationData={steps2}
                 />
               </div>
-              <div data-aos="zoom-in-left" data-aos-duration="2000" className="flex flex-col justify-center ">
+              <div
+                data-aos="zoom-in-left"
+                data-aos-duration="2000"
+                className="flex flex-col justify-center "
+              >
                 <p className="text-[#ddd] font-bold text-6xl md:text-9xl mb-5 md:mb-9">
                   {" "}
                   02
@@ -154,16 +161,21 @@ const StepsSection = () => {
                 <p>{t("steps:step2.content")}</p>
               </div>
             </section>
-          </TabPanel>
+          </div>
 
           {/* details section 3 */}
           {/* just commit  */}
 
-          <TabPanel>
+          <div>
             <section
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10"
-              id="step3">
-              <div data-aos="zoom-in-right" data-aos-duration="2000" className="flex flex-col justify-center ">
+              id="step3"
+            >
+              <div
+                data-aos="zoom-in-right"
+                data-aos-duration="2000"
+                className="flex flex-col justify-center "
+              >
                 <p className="text-[#ddd] font-bold text-6xl md:text-9xl mb-5 md:mb-9">
                   {" "}
                   03
@@ -173,16 +185,20 @@ const StepsSection = () => {
                 </h3>
                 <p>{t("steps:step3.content")}</p>
               </div>
-              <div data-aos="zoom-in-left" data-aos-duration="1000" className="">
+              <div
+                data-aos="zoom-in-left"
+                data-aos-duration="1000"
+                className=""
+              >
                 <Lottie
                   className="w-full lg:h-[500px]"
                   animationData={steps3}
                 />
               </div>
             </section>
-          </TabPanel>
+          </div>
         </div>
-      </Tabs>
+      </div>
       {/* Details Steps section End */}
     </div>
   );
