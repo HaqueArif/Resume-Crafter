@@ -12,15 +12,13 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 
 const ResumebuilderCheck = () => {
   const [uploadedFile, setUploadedFile] = useState(null);
-  const [resultPercentage, setResultPercentage] = useState(
-    "Please provide your resume"
-  );
+  const [resultPercentage, setResultPercentage] = useState();
   const [resumeText, setResumeText] = useState("");
   const [showResumeForm, setShowResumeForm] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
-      const apiKey = "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"; // Replace with your OpenAI API key
+      const apiKey = "sk-sdfgsdfgsdfg";
       openai.apiKey = apiKey;
 
       try {
@@ -141,7 +139,10 @@ const ResumebuilderCheck = () => {
 
   return (
     <div className="rgContainer my-[80px]">
-      <SectionTitle subHeading={"Resume Checker"} heading={"Check your resume"} />
+      <SectionTitle
+        subHeading={"Resume Checker"}
+        heading={"Check your resume"}
+      />
       <div className="p-8 bg-gray-50">
         <Dropzone onDrop={onDrop} accept=".pdf,.doc,.docx,.txt,.htm,.rtf">
           {({ getRootProps, getInputProps }) => (
@@ -174,9 +175,13 @@ const ResumebuilderCheck = () => {
                 <div
                   className="bg-[#197685] h-full rounded-full"
                   style={{
-                    width: resultPercentage !== "Please provide your resume"
-                      ? `${Math.min(parseFloat(resultPercentage.replace("%", "")), 75)}%`
-                      : "0%", // Ensure it's within 0-75%
+                    width:
+                      resultPercentage !== "Please provide your resume"
+                        ? `${Math.min(
+                            parseFloat(resultPercentage.replace("%", "")),
+                            75
+                          )}%`
+                        : "0%", // Ensure it's within 0-75%
                   }}
                 ></div>
               </div>
