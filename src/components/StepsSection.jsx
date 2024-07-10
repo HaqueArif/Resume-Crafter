@@ -163,7 +163,7 @@ const StepsSection = () => {
             </section>
           </div>
 
-          {/* details section 3 */}
+          {/* Details section 3 */}
 
           <div>
             <section
